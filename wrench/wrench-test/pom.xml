@@ -1,71 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- POM文件根元素，定义了Maven项目的配置 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 指定POM模型版本 -->
     <modelVersion>4.0.0</modelVersion>
+
+    <!-- 定义父项目，继承父项目的配置 -->
     <parent>
         <groupId>com.yang.wrench</groupId>
         <artifactId>wrench</artifactId>
         <version>1.0</version>
     </parent>
 
+    <!-- 当前项目的唯一标识符和打包方式 -->
     <artifactId>wrench-test</artifactId>
     <packaging>jar</packaging>
 
+    <!-- 项目依赖列表 -->
     <dependencies>
+        <!-- Spring Boot Web Starter：提供Web应用开发支持 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!-- Spring Boot Test Starter：提供测试支持，仅在测试范围有效 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- Spring Boot配置处理器：处理@ConfigurationProperties注解 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
         </dependency>
+
+        <!-- 阿里巴巴FastJSON：高性能JSON处理库 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
+
+        <!-- Apache Commons Lang3：提供各种工具类和工具方法 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
+
+        <!-- Lombok：通过注解减少Java代码的冗余 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+
+        <!-- JUnit：Java单元测试框架 -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- Apache Commons Codec：提供编码解码相关功能 -->
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
         </dependency>
-        <!--  动态配置中心  -->
+
+        <!-- 自定义动态配置中心 Starter -->
         <dependency>
             <groupId>com.yang.wrench</groupId>
             <artifactId>wrench-starter-dynamic-config-center</artifactId>
             <version>1.0</version>
         </dependency>
+        <!-- 自定义责任链与规则树 Starter -->
+        <dependency>
+            <groupId>com.yang.wrench</groupId>
+            <artifactId>wrench-starter-design-framework</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
+    <!-- 构建配置 -->
     <build>
+        <!-- 最终生成的jar包名称 -->
         <finalName>wrench-test-app</finalName>
+
+        <!-- 资源文件处理配置 -->
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
+                <!-- 启用资源过滤，可以替换资源文件中的占位符 -->
                 <filtering>true</filtering>
                 <includes>
+                    <!-- 包含所有资源文件 -->
                     <include>**/**</include>
                 </includes>
             </resource>
         </resources>
+
+        <!-- 测试资源文件处理配置 -->
         <testResources>
             <testResource>
                 <directory>src/test/resources</directory>
@@ -75,24 +111,34 @@
                 </includes>
             </testResource>
         </testResources>
+
+        <!-- 插件配置 -->
         <plugins>
+            <!-- Maven Surefire插件：用于执行测试 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
+                    <!-- 不跳过测试 -->
                     <skipTests>false</skipTests>
+                    <!-- 测试失败时忽略并继续构建 -->
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
+                        <!-- 包含所有以Test结尾的Java测试类 -->
                         <include>**/*Test.java</include>
                     </includes>
                 </configuration>
             </plugin>
+
+            <!-- Spring Boot Maven插件：用于打包可执行的Spring Boot应用 -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <!-- 指定Spring Boot应用的主类 -->
                     <mainClass>com.yang.wrench.Application</mainClass>
+                    <!-- 打包为可执行JAR -->
                     <layout>JAR</layout>
                 </configuration>
             </plugin>

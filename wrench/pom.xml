@@ -12,6 +12,7 @@
     <modules>
         <module>wrench-starter-dynamic-config-center</module>
         <module>wrench-test</module>
+        <module>wrench-starter-design-framework</module>
     </modules>
 
     <!-- 项目属性配置 -->

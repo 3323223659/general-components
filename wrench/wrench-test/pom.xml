@@ -81,6 +81,12 @@
             <artifactId>wrench-starter-design-framework</artifactId>
             <version>1.0</version>
         </dependency>
+        <!-- 自定义限流 Starter -->
+        <dependency>
+            <groupId>com.yang.wrench</groupId>
+            <artifactId>wrench-starter-rate-limiter</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <!-- 构建配置 -->

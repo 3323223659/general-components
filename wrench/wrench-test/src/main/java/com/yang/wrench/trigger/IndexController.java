@@ -1,5 +1,6 @@
 package com.yang.wrench.trigger;
 
+import com.yang.wrench.rate.limiter.types.annotations.RateLimiterAccessInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,9 +18,9 @@ public class IndexController {
 
     /**
      * curl --request GET \
-     *   --url 'http://127.0.0.1:9191/api/v1/index/draw?userId=xiaofuge'
+     *   --url 'http://127.0.0.1:9191/api/v1/index/draw?userId=yang'
      */
-    // @RateLimiterAccessInterceptor(key = "userId", fallbackMethod = "drawErrorRateLimiter", permitsPerSecond = 1.0d, blacklistCount = 1)
+    @RateLimiterAccessInterceptor(key = "userId", fallbackMethod = "drawErrorRateLimiter", permitsPerSecond = 1.0d, blacklistCount = 1)
     @RequestMapping(value = "draw", method = RequestMethod.GET)
     public String draw(String userId) {
         return "test";

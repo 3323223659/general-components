@@ -40,3 +40,5 @@ build/
 /wrench-test/data/
 /wrench-test/src/main/resources/application-dev.yml
 /wrench-test/src/main/resources/application-prod.yml
+/data/log/log_error.log
+/data/log/log_info.log

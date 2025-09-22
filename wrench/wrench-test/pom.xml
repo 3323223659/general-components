@@ -86,7 +86,7 @@
     <!-- 构建配置 -->
     <build>
         <!-- 最终生成的jar包名称 -->
-        <finalName>wrench-test-app</finalName>
+        <finalName>${project.artifactId}</finalName>
 
         <!-- 资源文件处理配置 -->
         <resources>

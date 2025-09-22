@@ -11,6 +11,13 @@
 
     <artifactId>wrench-starter-design-framework</artifactId>
 
+    <distributionManagement>
+        <repository>
+            <id>2593360-release-oUbjYB</id>
+            <url>https://packages.aliyun.com/68d0cf7cdf33344f193eda26/maven/2593360-release-oubjyb</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -30,6 +37,6 @@
 
     <!-- 构建配置 -->
     <build>
-        <finalName>${project.artifactId}:${project.version}</finalName>
+        <finalName>${project.artifactId}</finalName>
     </build>
 </project>

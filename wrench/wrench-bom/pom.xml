@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yang.wrench</groupId>
+    <artifactId>wrench-bom</artifactId>
+    <version>1.0.0</version>
+
+    <packaging>pom</packaging>
+
+    <name>wrench-bom</name>
+    <description>Bill of Materials POM (BOM) for the xfg wrench modules</description>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- wrench dcc 动态配置中心 -->
+            <dependency>
+                <groupId>com.yang.wrench</groupId>
+                <artifactId>wrench-starter-dynamic-config-center</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <!-- wrench design framework 设计模式 -->
+            <dependency>
+                <groupId>com.yang.wrench</groupId>
+                <artifactId>wrench-starter-design-framework</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <!-- wrench rate limiter 限流 -->
+            <dependency>
+                <groupId>com.yang.wrench</groupId>
+                <artifactId>wrench-starter-rate-limiter</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <!-- wrench stask job 任务调度 -->
+            <dependency>
+                <groupId>com.yang.wrench</groupId>
+                <artifactId>wrench-starter-stask-job</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

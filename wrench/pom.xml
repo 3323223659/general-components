@@ -14,6 +14,7 @@
         <module>wrench-test</module>
         <module>wrench-starter-design-framework</module>
         <module>wrench-starter-rate-limiter</module>
+        <module>wrench-starter-stask-job</module>
     </modules>
 
     <!-- 项目属性配置 -->

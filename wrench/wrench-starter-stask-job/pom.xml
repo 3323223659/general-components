@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.yang.wrench</groupId>
+        <artifactId>wrench</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>wrench-starter-stask-job</artifactId>
+
+    <!-- 部署管理配置 - 指定将构件部署到的远程仓库 -->
+    <distributionManagement>
+        <repository>
+            <!-- 仓库ID，用于在settings.xml中认证 -->
+            <id>2593360-release-oUbjYB</id>
+            <!-- 阿里云Maven私有仓库地址 -->
+            <url>https://packages.aliyun.com/68d0cf7cdf33344f193eda26/maven/2593360-release-oubjyb</url>
+        </repository>
+    </distributionManagement>
+
+    <!-- 项目依赖配置 -->
+    <dependencies>
+        <!-- Spring Boot 基础 Starter：提供核心自动配置和启动支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- Spring 上下文：提供 IoC 容器和依赖注入核心功能 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <!-- Spring 事务管理：提供声明式事务管理支持 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+
+        <!-- Spring 上下文支持：提供额外的上下文支持功能，如调度、缓存等 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
+        <!-- Spring Boot 配置处理器：处理 @ConfigurationProperties 注解，生成配置元数据 -->
+        <!-- optional=true 表示此依赖不会传递到依赖此项目的其他项目 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- SLF4J API：日志门面接口，提供统一的日志抽象层 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <!-- Lombok：通过注解减少 Java 代码的冗余，如自动生成 getter/setter -->
+        <!-- optional=true 表示此依赖不会传递到依赖此项目的其他项目 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- JUnit：Java 单元测试框架 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>  <!-- 仅在测试时有效，不会打包到生产环境 -->
+        </dependency>
+    </dependencies>
+
+    <!-- 构建配置 -->
+    <build>
+        <!-- 最终生成的jar包名称使用项目artifactId -->
+        <finalName>${project.artifactId}</finalName>
+    </build>
+
+</project>

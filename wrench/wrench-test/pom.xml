@@ -87,6 +87,12 @@
             <artifactId>wrench-starter-rate-limiter</artifactId>
             <version>1.0</version>
         </dependency>
+        <!-- 自定义任务调度 Starter -->
+        <dependency>
+            <groupId>com.yang.wrench</groupId>
+            <artifactId>wrench-starter-stask-job</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <!-- 构建配置 -->
